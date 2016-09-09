@@ -17,16 +17,11 @@ MAINTAINER Manuel Montoya <folken718@gmail.com>
 
 
 
-# RUN apk add --update curl && rm -rf /var/cache/apk/*
+# Updating ca-certificates in order to use  https in wget
 
-RUN apk add --update ca-certificates && rm -rf /var/cache/apk/*
+apk update && apk add ca-certificates && update-ca-certificates
 
-
-#ENV PKG_VERSION 4.1.1.161.1
-
-ENV PKG_VERSION 4.1.1.162
-
-#ENV PKG_VERSION 4.1.1.154
+ENV PKG_VERSION 4.1.1.163
 
 ENV PKG_FILE_NAME payara-$PKG_VERSION.zip
 
