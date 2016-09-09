@@ -15,11 +15,9 @@ MAINTAINER Manuel Montoya <folken718@gmail.com>
 
 # Built via docker build -t folken718/alpine-payara:latest .
 
-
-
 # Updating ca-certificates in order to use  https in wget
 
-apk update && apk add ca-certificates && update-ca-certificates
+RUN apk update && apk add ca-certificates && update-ca-certificates
 
 ENV PKG_VERSION 4.1.1.163
 
