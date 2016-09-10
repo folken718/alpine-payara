@@ -17,7 +17,11 @@ MAINTAINER Manuel Montoya <folken718@gmail.com>
 
 # Updating ca-certificates in order to use  https in wget
 
-RUN apk update && apk add ca-certificates && update-ca-certificates
+
+#Update CA Certificates
+RUN apk update \
+        && apk add ca-certificates wget \
+        && update-ca-certificates
 
 ENV PKG_VERSION 4.1.1.163
 
